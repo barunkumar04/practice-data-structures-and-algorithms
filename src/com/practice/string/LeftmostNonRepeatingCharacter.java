@@ -5,12 +5,12 @@ public class LeftmostNonRepeatingCharacter {
 
 		String input = "abcdba";
 		
-		int result = leftmostRepeatingChar_OrderOfN_Optimized(input);
+		int result = leftmostNonRepeatingChar_OrderOfN_Optimized(input);
 		System.out.println("Index of leftmost non repeating char is: " + result);
 
 	}
 
-	private static int leftmostRepeatingChar_OrderOfN_Optimized(String input) {
+	private static int leftmostNonRepeatingChar_OrderOfN_Optimized(String input) {
 		boolean[] visitedArray = new boolean[26];
 		for (int i = 0; i < 26; i++) {
 			visitedArray[i] = false;

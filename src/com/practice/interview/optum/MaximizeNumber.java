@@ -1,4 +1,4 @@
-package com.practice.optum;
+package com.practice.interview.optum;
 
 public class MaximizeNumber {
 

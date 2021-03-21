@@ -30,8 +30,8 @@ public class SumZeroSubArray {
 		if(a == null || a.size() == 0) {
 			throw new Exception("Invalid input!");
 		}
-		int[] prefixSumArray = new int[a.size()];
-		int sumTillCurrentIndex = 0;
+		long[] prefixSumArray = new long[a.size()];
+		long sumTillCurrentIndex = 0;
 		for(int i=0; i<a.size(); i++) {
 			sumTillCurrentIndex+= a.get(i);
 			if(sumTillCurrentIndex == 0) { 
@@ -47,7 +47,7 @@ public class SumZeroSubArray {
 			prefixSumArray[i] = sumTillCurrentIndex;
 		}
 		
-		Set<Integer> prefixSumSet = new HashSet<Integer>();
+		Set<Long> prefixSumSet = new HashSet<Long>();
 		for (int i = 0; i < prefixSumArray.length; i++) {
 			if(prefixSumSet.contains(prefixSumArray[i])) {
 				return true;

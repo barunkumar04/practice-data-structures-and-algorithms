@@ -8,7 +8,7 @@ public class ReverseWordsInString {
 	// output - brush-up for is This
 	public static void main(String[] args) {
 		
-		String input = "This is for brush-up";
+		String input = "qxkpvo  f   w vdg t wqxy ln mbqmtwwbaegx   mskgtlenfnipsl bddjk znhksoewu zwh bd fqecoskmo";
 		
 		String result = solution1(input);
 		System.out.println(result);
@@ -30,6 +30,10 @@ public class ReverseWordsInString {
 		
 		StringBuilder sbInput = new StringBuilder(input);
 		
+		//reversing whole string
+		reverseString(sbInput, 0, input.length()-1);
+		
+		// reverse each word
 		int beginIndex = 0;
 		for(int i = 0; i< sbInput.length(); i++) {
 			
@@ -41,8 +45,7 @@ public class ReverseWordsInString {
 		//reversing last word
 		reverseString(sbInput, beginIndex, sbInput.length() -1 );
 		
-		//reversing whole string
-		reverseString(sbInput, 0, input.length()-1);
+		
 		return sbInput.toString();
 		
 	}
@@ -68,18 +71,22 @@ public class ReverseWordsInString {
 	 *  
 	 */
 	private static String solution1(String input) {
+		String EMPTY_STRING = "";
 		String[] splitsOnSpace = input.split(" ");
 		Stack<String> words = new Stack<String>();
 		for (String word : splitsOnSpace) {
+			// if there are multiple spaces in between
+			if(EMPTY_STRING.equals(word))
+				continue;
 			words.push(word);
 		}
 		
-		String output = "";
+		StringBuilder output = new StringBuilder();
 		while(!words.isEmpty()) {
-			output = output+words.pop()+" ";
+			output = output.append(words.pop()).append(" ");
 		}
 		
-		return output.trim();
+		return output.toString().trim();
 	}
 
 }

@@ -94,17 +94,29 @@ public class SumTheMaxMinDifferenceOfSubSequences {
     	
     	Arrays.sort(A);
     	
+    	long pow = 1;
+    	
     	long sumLargest = 0;
     	long sumSmallest = 0;
     	int length = A.length;
     	for(int i=0; i<length; i++) {
-    		sumLargest = (long) (sumLargest + (A[i] * Math.pow(2, i))) ; // Refer derivation mentioned in 6.a.i
-    		sumSmallest = (long) (sumSmallest + (A[i] * Math.pow(2, (length-1-i)))) ; // Refer derivation mentioned in 6.b.i
-    		
-    		sumLargest =sumLargest % 1000000007;
-    		sumSmallest = sumSmallest % 1000000007; 
+    		sumLargest = sumLargest + ((pow * A[i]) %   1000000007 ) ; // Refer derivation mentioned in 6.a.i
+    		sumLargest = sumLargest % 1000000007;
+    	    pow = (pow * 2) %   1000000007;
+    	}
+    	pow = 1;
+    	for(int i=length-1; i>=0; i--) {
+    		sumSmallest = sumSmallest + (( pow * A[i]) %   1000000007) ; // Refer derivation mentioned in 6.b.i
+    	    sumSmallest = sumSmallest % 1000000007;
+    	    pow = (pow * 2) %   1000000007;
     	}
     	
-    	return (int) ((sumLargest - sumSmallest) % 1000000007);
+    	sumLargest = sumLargest % 1000000007;
+    	sumSmallest = sumSmallest % 1000000007;
+    	int ans = (int) ((sumLargest - sumSmallest) % 1000000007);
+    	if(ans < 0 ){
+    	    ans += 1000000007;
+    	}
+    	return ans;
     }
 }

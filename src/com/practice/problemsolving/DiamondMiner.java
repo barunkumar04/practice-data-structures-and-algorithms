@@ -69,7 +69,14 @@ public class DiamondMiner {
 		
 		System.out.println(solve(A, B, C));
 	}
-
+	
+	/**
+	 * Apprach - https://docs.google.com/document/d/17aH49Hpk94X2wtLi0Qa2VSmattzIAWFnHJ0uPd4hgbo/edit# 
+	 * @param A
+	 * @param B
+	 * @param C
+	 * @return
+	 */
 	public static int solve(int A, ArrayList<Integer> B, ArrayList<Integer> C) {
         ArrayList<Integer> shiftedMines = new ArrayList<Integer>();
         ArrayList<Integer> shiftedMiners = new ArrayList<Integer>();

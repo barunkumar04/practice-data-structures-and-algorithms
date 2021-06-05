@@ -71,40 +71,41 @@ public class DiamondMiner {
 	}
 
 	public static int solve(int A, ArrayList<Integer> B, ArrayList<Integer> C) {
-
-		// First converting to first co-ordinate
-		for (int i = 0; i < B.size(); i++) {
-			if (B.get(i) < 0) {
-				B.set(i, (B.get(i) * -1));
-			}
-		}
-
-		for (int i = 0; i < C.size(); i++) {
-			if (C.get(i) < 0) {
-				C.set(i, (C.get(i) * -1));
-			}
-		}
-		// Distance on y-axis
-		ArrayList<Integer> distanceOnY = new ArrayList<Integer>();
-		ArrayList<Integer> distanceOnX = new ArrayList<Integer>();
-
-		for (int i = 0; i < (A * 2); i++) {
-			if (i % 2 == 0)
-				distanceOnY.add(C.get(i));
-			else
-				distanceOnX.add(B.get(i));
-		}
-
-		Collections.sort(distanceOnY);
-		Collections.sort(distanceOnX);
-
-		int totalEffort = 0;
-
-		for (int i = 0; i < distanceOnX.size(); i++) {
-			totalEffort += Math
-					.sqrt((distanceOnX.get(i) * distanceOnX.get(i)) + (distanceOnY.get(i) * distanceOnY.get(i)));
-		}
-		return totalEffort;
-
-	}
+        ArrayList<Integer> shiftedMines = new ArrayList<Integer>();
+        ArrayList<Integer> shiftedMiners = new ArrayList<Integer>();
+        // tranposing -ve X-coordinate values to first quardrant. Also, exclusing zeros as one of the co-ordinate will be always zero
+        for(int i=0; i<B.size(); i++){
+            if(B.get(i) == 0)
+                continue;
+            if(B.get(i) < 0){
+                shiftedMines.add(B.get(i) * -1);
+            }else{
+                shiftedMines.add(B.get(i));
+            }
+        }
+        
+        for(int i=0; i<C.size(); i++){
+            if(C.get(i) == 0)
+                continue;
+            
+            if(C.get(i) < 0){
+                shiftedMiners.add(C.get(i) * -1);
+            }else{
+                shiftedMiners.add(C.get(i));
+            }
+        }
+        
+        Collections.sort(shiftedMines);
+        Collections.sort(shiftedMiners);
+        /*System.out.println(shiftedMines);
+        System.out.println(shiftedMiners);*/
+        
+        double totalEffort = 0;
+        //Calculating distance between two points
+        for(int i=0; i<shiftedMines.size();i++){
+            totalEffort += Math.sqrt((shiftedMines.get(i) * shiftedMines.get(i)) + (shiftedMiners.get(i) * shiftedMiners.get(i)));
+        }
+        return (int)totalEffort;
+        
+    }
 }

@@ -1,6 +1,6 @@
 package com.practice.recursion;
 
-// DO NOT USE THIS APPOROACH. Instead this is a neat approeach - 
+// DO NOT USE THIS APPOROACH. Instead this is a neat approach - https://github.com/barunkumar04/data-structures-and-algorithms/blob/master/src/com/practice/stack/SimplifyDirectoryPathIterative.java 
 public class SimplifyDirectoryPathRecursive {
 
 	public static void main(String[] args) {

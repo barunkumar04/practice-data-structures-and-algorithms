@@ -12,16 +12,16 @@ import java.util.Arrays;
  *      d. (A[j] - A[i]) + (i - j) where A[j] >= A[i] and j < i
  * 
  * 2. 1a can be re-written as (A[i] + i) - (A[j] + j). This is noting but sum of element and index. 
- *    Now to maximize this we need to take maximun for (A[i] + i) and minimum of (A[j] + j)
+ *    Now to maximize this we need to take maximum for (A[i] + i) and minimum of (A[j] + j)
  * 
  * 3. 1b can be re-written as (A[i] - i) - (A[j] - j). This is noting but sum of element and index. 
- *    Now to maximize this we need to take maximun for (A[i] - i) and minimum of (A[j] - j)
+ *    Now to maximize this we need to take maximum for (A[i] - i) and minimum of (A[j] - j)
  * 
  * 4. 1c can be re-written as (A[j] + j) - (A[i] + i). This is noting but sum of element and index. 
- *    Now to maximize this we need to take maximun for (A[j] + j) and minimum of (A[i] + i). Since we are dealing with absolute this statment is same as #2
+ *    Now to maximize this we need to take maximum for (A[j] + j) and minimum of (A[i] + i). Since we are dealing with absolute this statment is same as #2
  * 
  * 5. 1d can be re-written as (A[j] - j) - (A[i] - i). This is noting but sum of element and index. 
- *    Now to maximize this we need to take maximun for (A[j] - j) and minimum of (A[i] - i). Since we are dealing with absolute this statment is same as #3
+ *    Now to maximize this we need to take maximum for (A[j] - j) and minimum of (A[i] - i). Since we are dealing with absolute this statment is same as #3
  * 
  * 
  * Approach:

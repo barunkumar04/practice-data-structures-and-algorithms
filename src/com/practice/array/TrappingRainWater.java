@@ -1,5 +1,12 @@
 package com.practice.array;
 
+/**
+ * For problem statement and solution approach(Approach 3) refer https://docs.google.com/document/d/16Q85dI0OXGZ0SWH7D-Pb9MmBPagCQTO_iHGpNdg-E4s/edit# 
+ * 
+ * 
+ * @author Barun
+ *
+ */
 public class TrappingRainWater {
 
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.practice.math;
+package com.practice.maths;
 
 
 /**

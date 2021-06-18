@@ -45,8 +45,7 @@ Explanation 2:
  If you delete 15, gcd will be 5.
  If you delete 30, gcd will be 5.
 
- * 
- * 
+ *
  * @author Barun
  *
  */

@@ -50,10 +50,10 @@ Explanation 2:
  * @author Barun
  *
  */
-public class DeleteOneMaximiseGCD {
+public class GCDDeleteOneAndMaximise {
 
 	public static void main(String[] args) {
-		ArrayList<Integer> A = new ArrayList<Integer>(Arrays.asList(12, 15, 18));
+		ArrayList<Integer> A = new ArrayList<>(Arrays.asList(12, 15, 18));
 		
 		System.out.println(maximizeGCD(A));
 	}

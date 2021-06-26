@@ -1,6 +1,4 @@
-package com.practice.searching;
-
-import java.util.ArrayList;
+package com.practice.binarysearch;
 
 /**
  *

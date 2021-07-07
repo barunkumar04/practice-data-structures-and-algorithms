@@ -52,11 +52,11 @@ public class PalindromePartitioning {
 
         int startIndex = 0;
         int endIndex = a.length();
-        partitionAndCheckPalindrom(a, startIndex, endIndex, candidate, result);
+        partitionAndCheckPalindrome(a, startIndex, endIndex, candidate, result);
         System.out.println(result);
     }
 
-    private static void partitionAndCheckPalindrom(String input, int currIndex, int endIndex, ArrayList<String> candidate, ArrayList<ArrayList<String>> result) {
+    private static void partitionAndCheckPalindrome(String input, int currIndex, int endIndex, ArrayList<String> candidate, ArrayList<ArrayList<String>> result) {
         //Base check
         if (currIndex == endIndex) {
             //add candidate to result set
@@ -65,16 +65,16 @@ public class PalindromePartitioning {
         }
 
         for (int i = currIndex; i < endIndex; i++) {
-            if (isPalindrom(input, currIndex, i)) {
+            if (isPalindrome(input, currIndex, i)) {
                 candidate.add(input.substring(currIndex, i + 1));
-                partitionAndCheckPalindrom(input, i + 1, endIndex, candidate, result);
+                partitionAndCheckPalindrome(input, i + 1, endIndex, candidate, result);
                 candidate.remove(candidate.size() - 1);
 
             }
         }
     }
 
-    private static boolean isPalindrom(String a, int currIndex, int endIndex) {
+    private static boolean isPalindrome(String a, int currIndex, int endIndex) {
         if (currIndex >= endIndex) {
             return true;
         }
@@ -82,7 +82,7 @@ public class PalindromePartitioning {
         if (a.charAt(currIndex) != a.charAt(endIndex)) {
             return false;
         }
-        return isPalindrom(a, currIndex + 1, endIndex - 1);
+        return isPalindrome(a, currIndex + 1, endIndex - 1);
 
 
     }

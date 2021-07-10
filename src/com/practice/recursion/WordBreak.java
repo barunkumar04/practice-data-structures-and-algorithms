@@ -35,3 +35,5 @@ public class WordBreak {
 
     }
 }
+
+//TC - O(2^n)

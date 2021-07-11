@@ -43,6 +43,7 @@ import java.util.ListIterator;
  * 00 - 0
  * 01 - 1
  * So, return [0, 1].
+ *
  */
 public class GrayCode {
 

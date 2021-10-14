@@ -1,0 +1,121 @@
+/**
+
+Problem Description
+
+Given a list of N words. Find shortest unique prefix to represent each word in the list.
+
+NOTE: Assume that no word is prefix of another. In other words, the representation is always possible
+
+
+
+Problem Constraints
+1 <= Sum of length of all words <= 106
+
+
+
+Input Format
+First and only argument is a string array of size N.
+
+
+
+Output Format
+Return a string array B where B[i] denotes the shortest unique prefix to represent the ith word.
+
+
+
+Example Input
+Input 1:
+
+ A = ["zebra", "dog", "duck", "dove"]
+Input 2:
+
+A = ["apple", "ball", "cat"]
+
+
+Example Output
+Output 1:
+
+ ["z", "dog", "du", "dov"]
+Output 2:
+
+ ["a", "b", "c"]
+
+
+Example Explanation
+Explanation 1:
+
+ Shortest unique prefix of each word is:
+ For word "zebra", we can only use "z" as "z" is not any prefix of any other word given.
+ For word "dog", we have to use "dog" as "d" and "do" are prefixes of "dov".
+ For word "du", we have to use "du" as "d" is prefix of "dov" and "dog".
+ For word "dov", we have to use "dov" as "d" and do" are prefixes of "dog".  
+ 
+Explanation 2:
+
+ "a", "b" and c" are not prefixes of any other word. So, we can use of first letter of each to represent.
+
+*/
+
+public class ShortestUniquePrefix {
+
+    public static void main(String args[]){
+      ArrayList<String> A = new ArrayList<>();
+      A.add("zebra");
+      A.add("dog");
+      A.add("dawn");
+      A.add("dot");
+      
+      System.out.println(prefix(A));
+      
+    }
+    public ArrayList<String> prefix(ArrayList<String> A) {
+        TrieNode root = buildTrie(A);
+        ArrayList<String> prefix = new ArrayList<>();
+        for(String a : A){
+            TrieNode current = root;
+            StringBuilder pfx = new StringBuilder();
+            for(int i=0; i<a.length(); i++){
+                Character ch = a.charAt(i);
+                current = current.outEdges.get(ch);
+                pfx = pfx.append(ch);
+                if(current.passingString == 1){
+                    break;
+                }
+            }
+            prefix.add(pfx.toString());
+        }
+        return prefix;
+    }
+    
+    private TrieNode buildTrie(ArrayList<String> A){
+        TrieNode root = new TrieNode();
+        
+        for(String a : A){
+            TrieNode current = root;
+            for(int i=0; i<a.length(); i++){
+                Character ch = a.charAt(i);
+                Set<Character> outEdgeChars = current.outEdges.keySet();
+                if(!outEdgeChars.contains(ch)){
+                    current.outEdges.put(ch, new TrieNode());
+                }
+                current.passingString = current.passingString+1;   
+                current = current.outEdges.get(ch);
+                
+            }
+            current.isEnd = true;
+        }
+        return root;
+    }
+}
+
+class TrieNode{
+    public boolean isEnd;
+    public int passingString;
+    public Map<Character, TrieNode> outEdges;
+    
+    public TrieNode(){
+        this.isEnd = false;
+        this.passingString = 0;
+        this.outEdges = new HashMap<>();
+    }
+}

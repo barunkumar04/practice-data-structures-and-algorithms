@@ -37,19 +37,10 @@ public class PasswordFixEffortSlidingWindow {
         System.out.println(fixPasswordEffort("aA1")); // Output - 3
         System.out.println(fixPasswordEffort("a")); // Output - 5
         System.out.println(fixPasswordEffort("1337C0d3")); // Output - 0
-        System.out.println(fixPasswordEffort("aaa3bbb")); // Output - 0
+        System.out.println(fixPasswordEffort("aaa3bbb")); // Output - 2
 
     }
 
-    /**
-     * Approach -
-     * If length is less than 2 then effort required will be (6 - length). Note, there won't be any possibility of 3 consecutive chars here.
-     * If length is more than 2 but less that 6 then check if there is 3 consecutive chars and add 1 to effort considering we will be replacing
-     *
-     *
-     * @param input
-     * @return
-     */
     public static int fixPasswordEffort(String input){
         int length  = input.length();
         int effort = 0;
@@ -93,3 +84,5 @@ public class PasswordFixEffortSlidingWindow {
     }
 
 }
+
+// TC - O(n^2)

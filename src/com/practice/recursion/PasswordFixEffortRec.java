@@ -33,11 +33,11 @@ public class PasswordFixEffortRec {
     private static Boolean hasLower = Boolean.FALSE;
     private static Boolean hasDigit = Boolean.FALSE;
     public static void main(String[] args){
-        System.out.println(fixPasswordEffort("aA1aaa"));
-        System.out.println(fixPasswordEffort("aA1"));
-        System.out.println(fixPasswordEffort("a"));
-        System.out.println(fixPasswordEffort("1337C0d3"));
-        System.out.println(fixPasswordEffort("aaa3bbb")); // Output - 0
+        System.out.println(fixPasswordEffort("aA1aaa")); // Output - 1
+        System.out.println(fixPasswordEffort("aA1")); // Output - 3
+        System.out.println(fixPasswordEffort("a")); // Output - 5
+        System.out.println(fixPasswordEffort("1337C0d3")); // Output - 0
+        System.out.println(fixPasswordEffort("aaa3bbb")); // Output - 2
     }
 
     public static int fixPasswordEffort(String input){
@@ -55,6 +55,23 @@ public class PasswordFixEffortRec {
         return effort;
     }
 
+    /**
+     *
+     * Approach -
+     *  1. Called when length is more than 3. Because these could ob chance of invalidity
+     *  2. In recursive call check:
+     *      a. Its has upper char, lower char and digit
+     *      b. Also, it there were consecutive chars
+     *  3. When there are 3 consecutive found, add 1 to effort
+     *  4. At the end allocate 1 for each non-occurred Upper char, Lower char and Digit
+     *
+     * @param input
+     * @param loc
+     * @param prevChar
+     * @param sameCharCountSeqCount
+     * @param effort
+     * @return
+     */
 
     private static int checkValidity(String input, int loc, char prevChar, int sameCharCountSeqCount, int effort){
         if(loc == input.length()){
@@ -82,3 +99,5 @@ public class PasswordFixEffortRec {
 
     }
 }
+
+// TC - O(n)

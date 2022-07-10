@@ -4,7 +4,7 @@ package com.practice.tree;
 public class HeightOfBinaryTree {
 
 	public static void main(String[] args) {
-		TreeNode root = TreeUtil.constructBinaryTree();
+		TreeNode root = TreeUtil.constructBinarySearchTree();
 
 		int height = findHeightOfTree(root);
 		System.out.println(height);

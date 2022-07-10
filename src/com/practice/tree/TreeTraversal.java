@@ -3,7 +3,7 @@ package com.practice.tree;
 public class TreeTraversal {
 
 	public static void main(String[] args) {
-		TreeNode rootNode = TreeUtil.constructBinaryTree(); 
+		TreeNode rootNode = TreeUtil.constructBinarySearchTree();
 		
 		System.out.println("Printing inorder...");
 		inorderTraverse(rootNode);

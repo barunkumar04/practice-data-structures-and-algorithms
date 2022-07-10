@@ -21,7 +21,7 @@ public class DiameterOfBinaryTreeOptimized {
 	
 	private static int diameter = 0;
 	public static void main(String[] args) {
-		TreeNode root = TreeUtil.constructBinaryTree();
+		TreeNode root = TreeUtil.constructBinarySearchTree();
 		height(root);
 		System.out.println(diameter);
 

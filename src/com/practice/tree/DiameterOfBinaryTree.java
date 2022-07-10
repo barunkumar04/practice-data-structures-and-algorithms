@@ -19,7 +19,7 @@ package com.practice.tree;
 public class DiameterOfBinaryTree {
 
 	public static void main(String[] args) {
-		TreeNode root = TreeUtil.constructBinaryTree();
+		TreeNode root = TreeUtil.constructBinarySearchTree();
 		System.out.println(diameterOfBinaryTree(root));
 
 	}

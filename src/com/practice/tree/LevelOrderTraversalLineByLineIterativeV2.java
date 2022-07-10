@@ -21,7 +21,7 @@ import java.util.Queue;
 public class LevelOrderTraversalLineByLineIterativeV2 {
 
 	public static void main(String[] args) {
-		TreeNode root = TreeUtil.constructBinaryTree();
+		TreeNode root = TreeUtil.constructBinarySearchTree();
 		
 		printLevelOrder(root);
 

@@ -31,7 +31,7 @@ import java.util.Stack;
 public class SpiralTraversal {
 
 	public static void main(String[] args) {
-		TreeNode root = TreeUtil.constructBinaryTree();
+		TreeNode root = TreeUtil.constructBinarySearchTree();
 		
 		printSpiral(root);
 		

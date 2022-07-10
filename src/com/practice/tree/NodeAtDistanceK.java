@@ -3,7 +3,7 @@ package com.practice.tree;
 public class NodeAtDistanceK {
 
 	public static void main(String[] args) {
-		TreeNode root = TreeUtil.constructBinaryTree();
+		TreeNode root = TreeUtil.constructBinarySearchTree();
 
 		printNodeAtDistanceK(root,3);
 
